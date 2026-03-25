@@ -737,7 +737,7 @@ p, .desc {
   </div>
 
   <!-- Slide 12: Extensions — Two Directions -->
-  <div class="slide" data-steps="4">
+  <div class="slide" data-steps="3">
     <h2>Where does this go?</h2>
     <p style="font-size:1rem;color:#666;margin-bottom:1.25rem">BetFundMe is one goal, two sides, one shot. But the idea stretches in two directions.</p>
     <div class="compare">
@@ -754,7 +754,7 @@ p, .desc {
           Bettors bet <span style="color:#2e7d32;font-weight:600">UP</span> or <span style="color:#c62828;font-weight:600">DOWN</span> at each threshold. Protocol clears bottom-up — the funded level <em>emerges</em> from the bets.
         </p>
       </div>
-      <div class="vs fade-up" data-step="1">+</div>
+      <div class="vs fade-up" data-step="1" style="visibility:hidden;width:0;overflow:hidden"></div>
       <div class="compare-card fade-up" data-step="1" style="max-width:280px">
         <h3 style="font-size:1rem">🏘️ Many parks, one mechanism</h3>
         <div style="display:flex;gap:0.5rem;justify-content:center;margin:0.75rem 0">
@@ -767,15 +767,10 @@ p, .desc {
         </p>
       </div>
     </div>
-    <div class="fade-up" data-step="4" style="margin-top:1rem">
-      <p style="font-size:0.95rem;color:#888;max-width:480px">
-        Combine both: many projects, each with multiple thresholds.
-      </p>
-    </div>
   </div>
 
   <!-- Slide 15: Zoom Out — D2F as a Class -->
-  <div class="slide" data-steps="3">
+  <div class="slide" data-steps="2">
     <div class="big-emoji">🔭</div>
     <h2>Zoom out</h2>
     <p style="font-size:1.1rem;color:#555;max-width:540px">
@@ -790,9 +785,6 @@ p, .desc {
         </p>
         <p class="fade-up" data-step="2" style="font-size:0.95rem;color:#555;line-height:1.7;margin-top:0.75rem">
           The bet isn't just a prediction — it's a <strong>conditional commitment</strong>. Losing liquidity becomes evidence that the underlying event or infrastructure was worth building. Drafting turns speculative capital into an effective funding fee.
-        </p>
-        <p class="fade-up" data-step="3" style="font-size:0.95rem;color:#555;line-height:1.7;margin-top:0.75rem">
-          One goal or many. One threshold or a continuum. The principle is the same: <strong>bet liquidity funds what it bets on</strong>.
         </p>
       </div>
     </div>
@@ -878,9 +870,9 @@ p, .desc {
         el.classList.remove('show');
       }
     });
-    // Show fade-up elements on step > 0
-    const fadeUps = slides[slideIdx].querySelectorAll('.fade-up');
-    if (step > 0) {
+    // Show fade-up elements that don't have a data-step (they show on first visible step)
+    if (step >= 1) {
+      const fadeUps = slides[slideIdx].querySelectorAll('.fade-up:not([data-step])');
       fadeUps.forEach((el, i) => {
         setTimeout(() => el.classList.add('show'), i * 150);
       });
