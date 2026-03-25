@@ -6,7 +6,7 @@ Interactive animated explainer for **BetFundMe** and Draft-to-Funding Markets.
 
 ## What is this?
 
-Bets on funding outcomes can be *drafted* — partially converted into actual funding — to justify reaching thresholds. The protocol accounts as if coordination happened, because mathematically it should have.
+Bets on funding outcomes can be *drafted* — partially converted into actual funding — to justify reaching thresholds. The protocol accounts as if coordination happened, because coordinating is always better, isn't it?
 
 ## Run locally
 
